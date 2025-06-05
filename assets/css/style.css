@@ -1293,3 +1293,243 @@ h1 {
         font-size: 1.6rem;
     }
 }
+
+ /* Додаємо стиль для тіла сторінки, щоб відтворити ваш дизайн */
+ body.history-table-page {
+     background-color: #355c56;
+     /* Основний зелено-бірюзовий фон сторінки */
+     color: #e0e0e0;
+ }
+
+ .quiz-container {
+     margin-top: 50px;
+     padding: 40px;
+     background-color: #2E4B45;
+     /* Темний, насичений зелений фон для контейнера */
+     border-radius: 15px;
+     border: 2px solid #ffc107;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+ }
+
+ .quiz-container h2 {
+     text-align: center;
+     color: #ffc107;
+     margin-bottom: 40px;
+     font-size: 2em;
+ }
+
+ .quiz-form p {
+     font-size: 1.2em;
+     color: #e0e0e0;
+     margin-bottom: 30px;
+     line-height: 1.6;
+ }
+
+ /* Універсальні стилі для всіх полів вводу */
+ .quiz-form input[type="text"],
+ .quiz-form input[type="date"],
+ .quiz-form select,
+ .quiz-form textarea {
+     width: 100%;
+     padding: 12px;
+     margin-top: 10px;
+     border-radius: 8px;
+     border: 2px solid #5a8f85;
+     /* Рамка в тон */
+     background-color: #406A63;
+     /* Фон поля вводу в тон */
+     color: #f0f0f0;
+     font-size: 1em;
+     box-sizing: border-box;
+     transition: border-color 0.3s ease;
+ }
+
+ /* Ефект при фокусі на полі */
+ .quiz-form input[type="text"]:focus,
+ .quiz-form input[type="date"]:focus,
+ .quiz-form select:focus {
+     border-color: #ffc107;
+     /* Золота рамка при активності */
+     outline: none;
+ }
+
+ /* Стилізація опцій radio та checkbox */
+ .quiz-form label {
+     display: block;
+     margin-bottom: 12px;
+     padding: 10px 15px;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background-color 0.2s ease;
+     color: #dcdcdc;
+ }
+
+ .quiz-form label:hover {
+     background-color: rgba(255, 193, 7, 0.1);
+     /* Легке золоте підсвічування */
+ }
+
+ .quiz-form input[type="radio"],
+ .quiz-form input[type="checkbox"] {
+     margin-right: 12px;
+     transform: scale(1.2);
+     vertical-align: middle;
+     accent-color: #ffc107;
+     /* Робимо самі кружечки/галочки золотими */
+ }
+
+ /* Стилізація кнопки перевірки */
+ .quiz-center-button {
+     text-align: center;
+     margin-top: 40px;
+ }
+
+ .quiz-center-button input[type="button"] {
+     padding: 15px 40px;
+     font-size: 1.3em;
+     font-weight: bold;
+     color: #1a1a1a;
+     background-color: #ffc107;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background-color 0.3s ease, transform 0.2s ease;
+ }
+
+ .quiz-center-button input[type="button"]:hover {
+     background-color: #e0a800;
+     transform: translateY(-2px);
+ }
+
+ /* Стилізація поля для результатів */
+ .quiz-form textarea {
+     margin-top: 25px;
+     text-align: center;
+     font-weight: bold;
+     font-size: 1.2em;
+     background-color: #2E4B45;
+     /* Фон як у контейнера */
+     color: #ffc107;
+     border: 2px solid #ffc107;
+     resize: none;
+ }
+
+ :root {
+     --popup-bg: #4A6B5D;
+     /* Основний зелений фон, як у меню */
+     --text-primary: #f0f3f4;
+     /* Основний світлий текст */
+     --text-secondary: #bdc3c7;
+     /* Другорядний текст */
+     --button-primary-bg: #EAECEE;
+     /* Фон для головної кнопки (світлий) */
+     --button-primary-text: #34495E;
+     /* Текст для головної кнопки (темний) */
+     --button-secondary-border: #bdc3c7;
+     /* Колір рамки для другорядної кнопки */
+ }
+
+ /* Загальний контейнер вікна */
+ .themed-swal-popup {
+     background: var(--popup-bg) !important;
+     border-radius: 20px !important;
+     /* Більші заокруглення, як у меню */
+     border: none !important;
+     padding: 2em !important;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+ }
+
+ /* Заголовок ("Введіть своє ім'я") */
+ .themed-swal-title {
+     color: var(--text-primary) !important;
+     margin-bottom: 1.5em !important;
+     /* Більший відступ знизу */
+     font-weight: 600 !important;
+ }
+
+ /* Текст повідомлення (для фінального вікна) */
+ .themed-swal-html-container {
+     color: var(--text-secondary) !important;
+     font-size: 1.1em !important;
+     margin: 0 !important;
+     padding: 0 1em;
+     /* Додамо невеликі відступи по боках, щоб текст не прилипав */
+ }
+
+ /* Поле вводу */
+ .themed-swal-input {
+     height: 50px !important;
+     background-color: rgba(0, 0, 0, 0.2) !important;
+     border: 2px solid transparent !important;
+     /* Прозора рамка по дефолту */
+     border-radius: 12px !important;
+     color: var(--text-primary) !important;
+     font-size: 1.1em !important;
+     transition: border-color 0.3s ease;
+ }
+
+ .themed-swal-input:focus {
+     border-color: var(--text-secondary) !important;
+     /* Рамка з'являється при фокусі */
+     box-shadow: none !important;
+ }
+
+ /* Кастомний футбольний м'яч */
+ .themed-swal-image {
+     width: 80px !important;
+     height: 80px !important;
+     margin: 1.5em auto !important;
+     /* Відступи зверху та знизу */
+ }
+
+ /* Контейнер для кнопок: ключове виправлення! */
+ .themed-swal-actions {
+     display: flex !important;
+     gap: 1em !important;
+     /* Відступ між кнопками */
+     justify-content: center !important;
+     width: 100% !important;
+     margin-top: 2.5em !important;
+     /* Більший відступ зверху */
+ }
+
+ /* Загальний стиль для обох кнопок */
+ .themed-swal-confirm-button,
+ .themed-swal-cancel-button {
+     border-radius: 12px !important;
+     font-weight: 600 !important;
+     font-size: 1em !important;
+     padding: 12px 0 !important;
+     margin: 0 !important;
+     flex: 1;
+     /* Кнопки займають однакову ширину */
+     max-width: 180px;
+     /* Але не розтягуються безмежно */
+     transition: all 0.2s ease-out !important;
+     outline: none !important;
+     box-shadow: none !important;
+ }
+
+ /* Основна кнопка ("Далі", "OK") */
+ .themed-swal-confirm-button {
+     background-color: var(--button-primary-bg) !important;
+     color: var(--button-primary-text) !important;
+     border: 2px solid transparent !important;
+ }
+
+ .themed-swal-confirm-button:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Другорядна кнопка ("Скасувати") */
+ .themed-swal-cancel-button {
+     background: transparent !important;
+     color: var(--text-primary) !important;
+     border: 2px solid var(--button-secondary-border) !important;
+ }
+
+ .themed-swal-cancel-button:hover {
+     background-color: rgba(255, 255, 255, 0.1) !important;
+     border-color: var(--text-primary) !important;
+ }

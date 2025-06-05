@@ -4,8 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Історія Футболу - Хронологічна таблиця</title>
+    <title>Історія Футболу - Хронологічна таблиця та Тест</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Додамо трохи стилів для нашого тесту, щоб він виглядав охайно -->
+    <style>
+        .quiz-container {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid #4a4a4a;
+        }
+
+        .quiz-container h2 {
+            text-align: center;
+            color: #ffc107;
+            margin-bottom: 20px;
+        }
+
+        .quiz-form p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .quiz-form input[type="text"],
+        .quiz-form input[type="date"],
+        .quiz-form select,
+        .quiz-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .quiz-form input[type="radio"],
+        .quiz-form input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .quiz-form br {
+            margin-bottom: 5px;
+        }
+
+        .quiz-center-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .quiz-center-button input[type="button"] {
+            padding: 12px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1a1a1a;
+            background-color: #ffc107;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-center-button input[type="button"]:hover {
+            background-color: #e0a800;
+        }
+
+        .quiz-form textarea {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            background-color: #1e1e1e;
+            color: #ffc107;
+            border: 1px solid #ffc107;
+        }
+    </style>
 </head>
 
 <body class="history-table-page">
@@ -227,6 +301,55 @@
                 людство навколо спільної пристрасті до прекрасної гри.</p>
         </div>
 
+        <!-- ***** ПОЧАТОК БЛОКУ З ТЕСТОМ ***** -->
+        <div class="quiz-container">
+            <h2>Перевірте свої знання: Тест з історії футболу</h2>
+            <form method="post" name="footballTest" class="quiz-form">
+
+                <p><b>1. Коли була заснована Англійська футбольна асоціація (FA)?</b>
+                    <br><input type="date" name="question1" id="q1_date">
+                </p>
+
+                <p><b>2. Які дві збірні зіграли у першому офіційному міжнародному матчі в 1872 році?</b>
+                    <br><input type="radio" name="question2" id="q2_1" value="Бразилія та Аргентина"> Бразилія та
+                    Аргентина
+                    <br><input type="radio" name="question2" id="q2_2" value="Англія та Шотландія"> Англія та Шотландія
+                    <br><input type="radio" name="question2" id="q2_3" value="Франція та Німеччина"> Франція та
+                    Німеччина
+                </p>
+
+                <p><b>3. Відзначте стародавні ігри, які вважаються прообразами футболу (можливо декілька правильних
+                        відповідей):</b>
+                    <br><input type="checkbox" name="question3" id="q3_1" value="Цзу цю"> Цзу цю
+                    <br><input type="checkbox" name="question3" id="q3_2" value="Епіскірос"> Епіскірос
+                    <br><input type="checkbox" name="question3" id="q3_3" value="Гарпастум"> Гарпастум
+                    <br><input type="checkbox" name="question3" id="q3_4" value="Волейбол"> Волейбол
+                </p>
+
+                <p><b>4. В якій країні відбувся перший в історії Чемпіонат світу з футболу в 1930 році?</b>
+                    <select name="question4" id="q4_select">
+                        <option>Англія</option>
+                        <option>Бразилія</option>
+                        <option>Уругвай</option>
+                        <option>Італія</option>
+                    </select>
+                </p>
+
+                <p><b>5. Впишіть прізвисько легендарного бразильського футболіста, який виграв три чемпіонати світу в
+                        період 1958-1970 років.</b>
+                    <br><input type="text" name="question5" id="q5_text" placeholder="Король футболу...">
+                </p>
+
+                <!-- Кнопка та поле для виводу результату, розміщені по центру -->
+                <div class="quiz-center-button">
+                    <input name="check" onclick="perevirka(this.form)" type="button" value="Перевірити результати">
+                    <br>
+                    <textarea name="display" rows="3" cols="60" readonly> </textarea>
+                </div>
+            </form>
+        </div>
+        <!-- ***** КІНЕЦЬ БЛОКУ З ТЕСТОМ ***** -->
+
         <div class="button-container">
             <a href="index.html" class="styled-button">
                 <span class="button-icon">🏠</span>
@@ -234,6 +357,59 @@
             </a>
         </div>
     </div>
+
+    <!-- ***** СКРИПТ ПЕРЕВІРКИ ТЕСТУ ***** -->
+    <script>
+        function perevirka(form) {
+            let bal = 0; // Змінна для підрахунку балів
+
+            // --- Перевірка відповіді 1 (Дата) ---
+            if (document.getElementById("q1_date").value === "1863-10-26") {
+                bal += 1;
+            }
+
+            // --- Перевірка відповіді 2 (Радіокнопка) ---
+            if (document.getElementById("q2_2").checked) {
+                bal += 1;
+            }
+
+            // --- Перевірка відповіді 3 (Чекбокси) ---
+            // Правильна відповідь, якщо відзначені 3 правильні і НЕ відзначена 1 неправильна
+            const q3_1_checked = document.getElementById("q3_1").checked;
+            const q3_2_checked = document.getElementById("q3_2").checked;
+            const q3_3_checked = document.getElementById("q3_3").checked;
+            const q3_4_checked = document.getElementById("q3_4").checked; // Неправильний варіант
+
+            if (q3_1_checked && q3_2_checked && q3_3_checked && !q3_4_checked) {
+                bal += 1;
+            }
+
+            // --- Перевірка відповіді 4 (Випадаючий список) ---
+            if (document.getElementById("q4_select").value === "Уругвай") {
+                bal += 1;
+            }
+
+            // --- Перевірка відповіді 5 (Текстове поле) ---
+            // .trim() видаляє зайві пробіли, .toLowerCase() робить текст маленькими літерами для коректного порівняння
+            const answer5 = document.getElementById("q5_text").value.trim().toLowerCase();
+            if (answer5 === "пеле") {
+                bal += 1;
+            }
+
+            // --- Формування та вивід результату ---
+            let resultMessage = "Ваш результат: " + bal + " з 5 правильних відповідей.\n";
+
+            if (bal === 5) {
+                resultMessage += "Неймовірно! Ви справжній експерт з історії футболу!";
+            } else if (bal >= 3) {
+                resultMessage += "Дуже добре! Ви чудово орієнтуєтесь в темі.";
+            } else {
+                resultMessage += "Непогано, але спробуйте ще раз, уважно перечитавши інформацію на сторінці.";
+            }
+
+            form.display.value = resultMessage;
+        }
+    </script>
 </body>
 
 </html>

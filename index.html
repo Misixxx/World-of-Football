@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Світ Футболу - Головна</title>
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Підключення бібліотеки для красивих сповіщень -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- ===== ФІНАЛЬНІ КАСТОМНІ СТИЛІ ДЛЯ МОДАЛЬНИХ ВІКОН ===== -->
 </head>
 
 <body class="main-menu-page">
@@ -48,6 +53,13 @@
                     <div class="nav-arrow">→</div>
                 </a>
             </div>
+            <div class="nav-item">
+                <a href="#" id="startSurveyBtn" title="Натисніть, щоб пройти опитування">
+                    <div class="nav-icon">📝</div>
+                    <span>Пройти опитування</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
         </nav>
     </div>
     <div id="mapModal" class="modal">
@@ -55,10 +67,9 @@
             <span class="close-button">×</span>
             <h2>Футбольна карта України</h2>
             <div class="map-container">
-                <img src="assets/media/ukraine.png" alt="Карта футбольних команд України"
-                    usemap="#ukraineFootballMap">
+                <img src="assets/media/ukraine.png" alt="Карта футбольних команд України" usemap="#ukraineFootballMap">
                 <map name="ukraineFootballMap">
-
+                    <!-- ... ваші теги <area> залишаються тут ... -->
                     <area shape="circle" coords="290,160,12" href="https://www.google.com/search?q=ФК+Динамо+Київ"
                         target="_blank" alt="Київ - Динамо" title="Київ - ФК Динамо Київ">
                     <area shape="circle" coords="208,260,12" href="https://www.google.com/search?q=ФК+Нива+Вінниця"
