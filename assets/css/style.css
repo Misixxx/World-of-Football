@@ -1864,3 +1864,165 @@ h1 {
      color: #fff;
      background-color: var(--error-color);
  }
+ :root {
+     --popup-bg: #4A6B5D;
+     --text-primary: #f0f3f4;
+     --text-secondary: #bdc3c7;
+     --button-primary-bg: #EAECEE;
+     --button-primary-text: #34495E;
+     --button-secondary-border: #bdc3c7;
+     --error-color: #e74c3c;
+     --success-color: #2ecc71;
+ }
+
+ /* --- Стилі для SweetAlert (опитування) --- */
+ .themed-swal-popup {
+     background: var(--popup-bg) !important;
+     border-radius: 20px !important;
+     border: none !important;
+     padding: 2em !important;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+ }
+
+ .themed-swal-title {
+     color: var(--text-primary) !important;
+     margin-bottom: 1.5em !important;
+     font-weight: 600 !important;
+ }
+
+ .themed-swal-html-container {
+     color: var(--text-secondary) !important;
+     font-size: 1.1em !important;
+     margin: 0 !important;
+     padding: 0 1em;
+ }
+
+ .themed-swal-input {
+     height: 50px !important;
+     background-color: rgba(0, 0, 0, 0.2) !important;
+     border: 2px solid transparent !important;
+     border-radius: 12px !important;
+     color: var(--text-primary) !important;
+     font-size: 1.1em !important;
+     transition: border-color 0.3s ease;
+ }
+
+ .themed-swal-input:focus {
+     border-color: var(--text-secondary) !important;
+     box-shadow: none !important;
+ }
+
+ .themed-swal-image {
+     width: 80px !important;
+     height: 80px !important;
+     margin: 1.5em auto !important;
+ }
+
+ .themed-swal-actions {
+     display: flex !important;
+     gap: 1em !important;
+     justify-content: center !important;
+     width: 100% !important;
+     margin-top: 2.5em !important;
+ }
+
+ .themed-swal-confirm-button,
+ .themed-swal-cancel-button {
+     border-radius: 12px !important;
+     font-weight: 600 !important;
+     font-size: 1em !important;
+     padding: 12px 0 !important;
+     margin: 0 !important;
+     flex: 1;
+     max-width: 180px;
+     transition: all 0.2s ease-out !important;
+     outline: none !important;
+     box-shadow: none !important;
+ }
+
+ .themed-swal-confirm-button {
+     background-color: var(--button-primary-bg) !important;
+     color: var(--button-primary-text) !important;
+     border: 2px solid transparent !important;
+ }
+
+ .themed-swal-confirm-button:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ .themed-swal-cancel-button {
+     background: transparent !important;
+     color: var(--text-primary) !important;
+     border: 2px solid var(--button-secondary-border) !important;
+ }
+
+ .themed-swal-cancel-button:hover {
+     background-color: rgba(255, 255, 255, 0.1) !important;
+     border-color: var(--text-primary) !important;
+ }
+
+ /* --- Стилі для модального вікна калькулятора --- */
+ .calc-form {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+     margin: 20px 0;
+ }
+
+ .form-group {
+     display: flex;
+     flex-direction: column;
+     text-align: left;
+ }
+
+ .form-group label {
+     margin-bottom: 5px;
+     font-size: 0.9em;
+     color: var(--text-secondary);
+ }
+
+ .form-group input[type="number"] {
+     padding: 10px;
+     background-color: rgba(0, 0, 0, 0.2);
+     border: 1px solid var(--button-secondary-border);
+     border-radius: 8px;
+     color: var(--text-primary);
+     font-size: 1em;
+ }
+
+ #calculateBtn {
+     padding: 12px;
+     border-radius: 8px;
+     background-color: var(--button-primary-bg);
+     color: var(--button-primary-text);
+     border: none;
+     cursor: pointer;
+     font-weight: bold;
+     transition: all 0.2s ease;
+     margin-top: 10px;
+ }
+
+ #calculateBtn:hover {
+     transform: translateY(-2px);
+ }
+
+ #calcResult {
+     margin-top: 20px;
+     font-size: 1.1em;
+     font-weight: bold;
+     padding: 15px;
+     border-radius: 8px;
+     text-align: center;
+     min-height: 50px;
+ }
+
+ #calcResult.success {
+     color: #fff;
+     background-color: var(--success-color);
+ }
+
+ #calcResult.error {
+     color: #fff;
+     background-color: var(--error-color);
+ }
