@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Світ Футболу - Головна</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="main-menu-page">
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="header">
+            <div class="football-icon">⚽</div>
+            <h1>Головне меню</h1>
+            <p class="subtitle">Оберіть пункт:</p>
+        </div>
+
+        <nav class="navigation">
+            <div class="nav-item">
+                <a href="legends.html" title="Для переходу натисніть">
+                    <div class="nav-icon">🏆</div>
+                    <span>Легенди футболу</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="history.html" title="Для переходу натисніть">
+                    <div class="nav-icon">📚</div>
+                    <span>Історія футболу</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="competitions.html" title="Для переходу натисніть">
+                    <div class="nav-icon">🏅</div>
+                    <span>Футбольні змагання</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" id="openMapBtn" title="Відкрити карту команд">
+                    <div class="nav-icon">🗺️</div>
+                    <span>Карта команд</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2>Футбольна карта України</h2>
+            <div class="map-container">
+                <img src="assets/media/ukraine.png" alt="Карта футбольних команд України"
+                    usemap="#ukraineFootballMap">
+                <map name="ukraineFootballMap">
+
+                    <area shape="circle" coords="290,160,12" href="https://www.google.com/search?q=ФК+Динамо+Київ"
+                        target="_blank" alt="Київ - Динамо" title="Київ - ФК Динамо Київ">
+                    <area shape="circle" coords="208,260,12" href="https://www.google.com/search?q=ФК+Нива+Вінниця"
+                        target="_blank" alt="Вінниця - Нива" title="Вінницька обл. - ФК Нива Вінниця">
+                    <area shape="circle" coords="125,155,12" href="https://www.google.com/search?q=ФК+Волинь+Луцьк"
+                        target="_blank" alt="Луцьк - Волинь" title="Волинська обл. - ФК Волинь Луцьк">
+                    <area shape="circle" coords="430,280,12" href="https://www.google.com/search?q=СК+Дніпро-1"
+                        target="_blank" alt="Дніпро - Дніпро-1" title="Дніпропетровська обл. - СК Дніпро-1">
+                    <area shape="circle" coords="550,300,12" href="https://www.google.com/search?q=ФК+Шахтар+Донецьк"
+                        target="_blank" alt="Донецьк - Шахтар" title="Донецька обл. - ФК Шахтар Донецьк">
+                    <area shape="circle" coords="220,170,12" href="https://www.google.com/search?q=ФК+Полісся+Житомир"
+                        target="_blank" alt="Житомир - Полісся" title="Житомирська обл. - ФК Полісся Житомир">
+                    <area shape="circle" coords="88,320,12" href="https://www.google.com/search?q=ФК+Минай"
+                        target="_blank" alt="Ужгород - Минай" title="Закарпатська обл. - ФК Минай">
+                    <area shape="circle" coords="460,340,12"
+                        href="https://www.google.com/search?q=ФК+Металург+Запоріжжя" target="_blank"
+                        alt="Запоріжжя - Металург" title="Запорізька обл. - ФК Металург Запоріжжя">
+                    <area shape="circle" coords="140,300,12" href="https://www.google.com/search?q=ФК+Прикарпаття"
+                        target="_blank" alt="Івано-Франківськ - Прикарпаття"
+                        title="Івано-Франківська обл. - ФК Прикарпаття">
+                    <area shape="circle" coords="310,200,12" href="https://www.google.com/search?q=ФК+Лівий+Берег"
+                        target="_blank" alt="Київська обл. - Лівий Берег" title="Київська обл. - ФК Лівий Берег">
+                    <area shape="circle" coords="360,290,12" href="https://www.google.com/search?q=ФК+Олександрія"
+                        target="_blank" alt="Кропивницький - Олександрія" title="Кіровоградська обл. - ФК Олександрія">
+                    <area shape="circle" coords="600,260,12" href="https://www.google.com/search?q=ФК+Зоря+Луганськ"
+                        target="_blank" alt="Луганськ - Зоря" title="Луганська обл. - ФК Зоря Луганськ">
+                    <area shape="circle" coords="100,230,12"
+                        href="https://www.google.com/search?q=ФК+Карпати+Львів+ФК+Рух+Львів" target="_blank"
+                        alt="Львів - Карпати/Рух" title="Львівська обл. - ФК Карпати / ФК Рух">
+                    <area shape="circle" coords="360,360,12" href="https://www.google.com/search?q=МФК+Миколаїв"
+                        target="_blank" alt="Миколаїв - МФК Миколаїв" title="Миколаївська обл. - МФК Миколаїв">
+                    <area shape="circle" coords="290,390,12" href="https://www.google.com/search?q=ФК+Чорноморець+Одеса"
+                        target="_blank" alt="Одеса - Чорноморець" title="Одеська обл. - ФК Чорноморець Одеса">
+                    <area shape="circle" coords="420,220,12" href="https://www.google.com/search?q=ФК+Ворскла+Полтава"
+                        target="_blank" alt="Полтава - Ворскла" title="Полтавська обл. - ФК Ворскла Полтава">
+                    <area shape="circle" coords="160,190,12" href="https://www.google.com/search?q=ФК+Верес+Рівне"
+                        target="_blank" alt="Рівне - Верес" title="Рівненська обл. - ФК Верес Рівне">
+                    <area shape="circle" coords="430,160,12" href="https://www.google.com/search?q=ФК+Вікторія+Суми"
+                        target="_blank" alt="Суми - Вікторія" title="Сумська обл. - ФК Вікторія Суми">
+                    <area shape="circle" coords="150,250,12" href="https://www.google.com/search?q=ФК+Нива+Тернопіль"
+                        target="_blank" alt="Тернопіль - Нива" title="Тернопільська обл. - ФК Нива Тернопіль">
+                    <area shape="circle" coords="500,200,12"
+                        href="https://www.google.com/search?q=ФК+Металіст+1925+Харків" target="_blank"
+                        alt="Харків - Металіст 1925" title="Харківська обл. - ФК Металіст 1925">
+                    <area shape="circle" coords="380,410,12" href="https://www.google.com/search?q=ФК+Кристал+Херсон"
+                        target="_blank" alt="Херсон - Кристал" title="Херсонська обл. - ФК Кристал Херсон">
+                    <area shape="circle" coords="180,230,12"
+                        href="https://www.google.com/search?q=ФК+Поділля+Хмельницький" target="_blank"
+                        alt="Хмельницький - Поділля" title="Хмельницька обл. - ФК Поділля Хмельницький">
+                    <area shape="circle" coords="330,250,12" href="https://www.google.com/search?q=ФК+ЛНЗ+Черкаси"
+                        target="_blank" alt="Черкаси - ЛНЗ" title="Черкаська обл. - ФК ЛНЗ Черкаси">
+                    <area shape="circle" coords="150,300,12" href="https://www.google.com/search?q=ФК+Буковина+Чернівці"
+                        target="_blank" alt="Чернівці - Буковина" title="Чернівецька обл. - ФК Буковина Чернівці">
+                    <area shape="circle" coords="330,130,12"
+                        href="https://www.google.com/search?q=ФК+Десна+Чернігів+ФК+Чернігів" target="_blank"
+                        alt="Чернігів - Десна/Чернігів" title="Чернігівська обл. - ФК Десна / ФК Чернігів">
+                    <area shape="circle" coords="440,480,12"
+                        href="https://www.google.com/search?q=ФК+Таврія+Сімферополь" target="_blank" alt="Крим - Таврія"
+                        title="АР Крим - ФК Таврія Сімферополь">
+                </map>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
