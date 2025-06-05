@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Світ Футболу - Головна</title>
 
-    <!-- Підключення файлів стилів та зовнішніх скриптів -->
+    <!-- ПРАВИЛЬНИЙ ШЛЯХ до файлу стилів (без слеша на початку) -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Зовнішні скрипти, з ними все добре, не чіпаємо -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    
 </head>
 
 <body class="main-menu-page">
@@ -24,6 +26,7 @@
 
         <nav class="navigation">
             <div class="nav-item">
+                <!-- Відносні шляхи до інших сторінок теж повинні бути без слеша -->
                 <a href="legends.html" title="Для переходу натисніть">
                     <div class="nav-icon">🏆</div><span>Легенди футболу</span>
                     <div class="nav-arrow">→</div>
@@ -69,9 +72,10 @@
             <span class="close-button">×</span>
             <h2>Футбольна карта України</h2>
             <div class="map-container">
+                <!-- ПРАВИЛЬНИЙ ШЛЯХ до зображення -->
                 <img src="assets/media/ukraine.png" alt="Карта футбольних команд України" usemap="#ukraineFootballMap">
                 <map name="ukraineFootballMap">
-                    <!-- ... ваші теги <area> залишаються тут ... -->
+                    <!-- ... ваші теги <area> ... -->
                 </map>
             </div>
         </div>
@@ -97,7 +101,7 @@
         </div>
     </div>
 
-    <!-- Підключення файлів скриптів -->
+    <!-- ПРАВИЛЬНІ ШЛЯХИ до скриптів -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/gpn.js"></script>
 </body>
