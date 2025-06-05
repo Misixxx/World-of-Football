@@ -6,120 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Світ Футболу - Головна</title>
 
+    <!-- Підключення файлів стилів та зовнішніх скриптів -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- 1. Підключення jQuery (КРИТИЧНО ВАЖЛИВО для інтерактивної карти) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- 2. Підключення бібліотеки для красивих сповіщень -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- 3. Ваші кастомні стилі для модальних вікон -->
-    <style>
-        :root {
-            --popup-bg: #4A6B5D;
-            --text-primary: #f0f3f4;
-            --text-secondary: #bdc3c7;
-            --button-primary-bg: #EAECEE;
-            --button-primary-text: #34495E;
-            --button-secondary-border: #bdc3c7;
-        }
-
-        /* ... всі ваші кастомні стилі залишаються тут ... */
-        .themed-swal-popup {
-            background: var(--popup-bg) !important;
-            border-radius: 20px !important;
-            border: none !important;
-            padding: 2em !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
-        }
-
-        .themed-swal-title {
-            color: var(--text-primary) !important;
-            margin-bottom: 1.5em !important;
-            font-weight: 600 !important;
-        }
-
-        .themed-swal-html-container {
-            color: var(--text-secondary) !important;
-            font-size: 1.1em !important;
-            margin: 0 !important;
-            padding: 0 1em;
-        }
-
-        .themed-swal-input {
-            height: 50px !important;
-            background-color: rgba(0, 0, 0, 0.2) !important;
-            border: 2px solid transparent !important;
-            border-radius: 12px !important;
-            color: var(--text-primary) !important;
-            font-size: 1.1em !important;
-            transition: border-color 0.3s ease;
-        }
-
-        .themed-swal-input:focus {
-            border-color: var(--text-secondary) !important;
-            box-shadow: none !important;
-        }
-
-        .themed-swal-image {
-            width: 80px !important;
-            height: 80px !important;
-            margin: 1.5em auto !important;
-        }
-
-        .themed-swal-actions {
-            display: flex !important;
-            gap: 1em !important;
-            justify-content: center !important;
-            width: 100% !important;
-            margin-top: 2.5em !important;
-        }
-
-        .themed-swal-confirm-button,
-        .themed-swal-cancel-button {
-            border-radius: 12px !important;
-            font-weight: 600 !important;
-            font-size: 1em !important;
-            padding: 12px 0 !important;
-            margin: 0 !important;
-            flex: 1;
-            max-width: 180px;
-            transition: all 0.2s ease-out !important;
-            outline: none !important;
-            box-shadow: none !important;
-        }
-
-        .themed-swal-confirm-button {
-            background-color: var(--button-primary-bg) !important;
-            color: var(--button-primary-text) !important;
-            border: 2px solid transparent !important;
-        }
-
-        .themed-swal-confirm-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .themed-swal-cancel-button {
-            background: transparent !important;
-            color: var(--text-primary) !important;
-            border: 2px solid var(--button-secondary-border) !important;
-        }
-
-        .themed-swal-cancel-button:hover {
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            border-color: var(--text-primary) !important;
-        }
-    </style>
 </head>
 
 <body class="main-menu-page">
     <div class="background-animation"></div>
     <div class="container">
-        <!-- ... решта HTML залишається без змін ... -->
+        <div class="header">
+            <div class="football-icon">⚽</div>
+            <h1>Головне меню</h1>
+            <p class="subtitle">Оберіть пункт:</p>
+        </div>
+
+        <nav class="navigation">
+            <div class="nav-item">
+                <a href="legends.html" title="Для переходу натисніть">
+                    <div class="nav-icon">🏆</div><span>Легенди футболу</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="history.html" title="Для переходу натисніть">
+                    <div class="nav-icon">📚</div><span>Історія футболу</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="competitions.html" title="Для переходу натисніть">
+                    <div class="nav-icon">🏅</div><span>Футбольні змагання</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" id="openMapBtn" title="Відкрити карту команд">
+                    <div class="nav-icon">🗺️</div><span>Карта команд</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" id="startSurveyBtn" title="Натисніть, щоб пройти опитування">
+                    <div class="nav-icon">📝</div><span>Пройти опитування</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" id="openCalcBtn" title="Обчислити гіпотенузу">
+                    <div class="nav-icon">🧮</div>
+                    <span>Калькулятор гіпотенузи</span>
+                    <div class="nav-arrow">→</div>
+                </a>
+            </div>
+        </nav>
     </div>
 
+    <!-- Модальне вікно для карти -->
     <div id="mapModal" class="modal">
         <div class="modal-content">
             <span class="close-button">×</span>
@@ -127,12 +71,35 @@
             <div class="map-container">
                 <img src="assets/media/ukraine.png" alt="Карта футбольних команд України" usemap="#ukraineFootballMap">
                 <map name="ukraineFootballMap">
-                    <!-- ... ваші <area> тут ... -->
+                    <!-- ... ваші теги <area> залишаються тут ... -->
                 </map>
             </div>
         </div>
     </div>
+
+    <!-- Модальне вікно для калькулятора -->
+    <div id="calcModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2>Знаходження довжини гіпотенузи</h2>
+            <div class="calc-form">
+                <div class="form-group">
+                    <label for="k1">Довжина першого катета (см):</label>
+                    <input type="number" id="k1" required min="0.01" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="k2">Довжина другого катета (см):</label>
+                    <input type="number" id="k2" required min="0.01" step="0.01">
+                </div>
+                <button id="calculateBtn">Обчислити</button>
+            </div>
+            <div id="calcResult"></div>
+        </div>
+    </div>
+
+    <!-- Підключення файлів скриптів -->
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/gpn.js"></script>
 </body>
 
 </html>
