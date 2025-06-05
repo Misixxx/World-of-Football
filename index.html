@@ -6,14 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Світ Футболу - Головна</title>
 
-    <!-- ПРАВИЛЬНИЙ ШЛЯХ до файлу стилів (без слеша на початку) -->
+    <!-- Посилання на CSS та бібліотеки -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Зовнішні скрипти, з ними все добре, не чіпаємо -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!-- Ваші кастомні стилі залишаються тут -->
 </head>
 
 <body class="main-menu-page">
@@ -24,46 +18,31 @@
             <h1>Головне меню</h1>
             <p class="subtitle">Оберіть пункт:</p>
         </div>
-
         <nav class="navigation">
-            <div class="nav-item">
-                <!-- Відносні шляхи до інших сторінок теж повинні бути без слеша -->
-                <a href="legends.html" title="Для переходу натисніть">
+            <div class="nav-item"><a href="legends.html" title="Для переходу натисніть">
                     <div class="nav-icon">🏆</div><span>Легенди футболу</span>
                     <div class="nav-arrow">→</div>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="history.html" title="Для переходу натисніть">
+                </a></div>
+            <div class="nav-item"><a href="history.html" title="Для переходу натисніть">
                     <div class="nav-icon">📚</div><span>Історія футболу</span>
                     <div class="nav-arrow">→</div>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="competitions.html" title="Для переходу натисніть">
+                </a></div>
+            <div class="nav-item"><a href="competitions.html" title="Для переходу натисніть">
                     <div class="nav-icon">🏅</div><span>Футбольні змагання</span>
                     <div class="nav-arrow">→</div>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="#" id="openMapBtn" title="Відкрити карту команд">
+                </a></div>
+            <div class="nav-item"><a href="#" id="openMapBtn" title="Відкрити карту команд">
                     <div class="nav-icon">🗺️</div><span>Карта команд</span>
                     <div class="nav-arrow">→</div>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="#" id="startSurveyBtn" title="Натисніть, щоб пройти опитування">
+                </a></div>
+            <div class="nav-item"><a href="#" id="startSurveyBtn" title="Натисніть, щоб пройти опитування">
                     <div class="nav-icon">📝</div><span>Пройти опитування</span>
                     <div class="nav-arrow">→</div>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="#" id="openCalcBtn" title="Обчислити гіпотенузу">
-                    <div class="nav-icon">🧮</div>
-                    <span>Калькулятор гіпотенузи</span>
+                </a></div>
+            <div class="nav-item"><a href="#" id="openCalcBtn" title="Обчислити гіпотенузу">
+                    <div class="nav-icon">🧮</div><span>Калькулятор гіпотенузи</span>
                     <div class="nav-arrow">→</div>
-                </a>
-            </div>
+                </a></div>
         </nav>
     </div>
 
@@ -73,10 +52,9 @@
             <span class="close-button">×</span>
             <h2>Футбольна карта України</h2>
             <div class="map-container">
-                <!-- ПРАВИЛЬНИЙ ШЛЯХ до зображення -->
                 <img src="assets/media/ukraine.png" alt="Карта футбольних команд України" usemap="#ukraineFootballMap">
                 <map name="ukraineFootballMap">
-                    <!-- ... ваші теги <area> ... -->
+                    <!-- ... ваші теги <area> залишаються тут ... -->
                 </map>
             </div>
         </div>
@@ -90,11 +68,11 @@
             <div class="calc-form">
                 <div class="form-group">
                     <label for="k1">Довжина першого катета (см):</label>
-                    <input type="number" id="k1" required min="0.01" step="0.01">
+                    <input type="number" id="k1" required min="0.01" step="0.01" placeholder="Введіть число...">
                 </div>
                 <div class="form-group">
                     <label for="k2">Довжина другого катета (см):</label>
-                    <input type="number" id="k2" required min="0.01" step="0.01">
+                    <input type="number" id="k2" required min="0.01" step="0.01" placeholder="Введіть число...">
                 </div>
                 <button id="calculateBtn">Обчислити</button>
             </div>
@@ -102,7 +80,12 @@
         </div>
     </div>
 
-    <!-- ПРАВИЛЬНІ ШЛЯХИ до скриптів -->
+    <!-- Підключення скриптів в правильному порядку -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagemapster/1.5.4/jquery.imagemapster.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Наші власні файли скриптів -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/gpn.js"></script>
 </body>
