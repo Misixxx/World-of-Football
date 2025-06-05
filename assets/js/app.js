@@ -76,7 +76,6 @@
         }
 
         Swal.fire({
-            imageUrl: 'https://www.flaticon.com/svg/static/icons/svg/882/882355.svg', imageAlt: 'Футбольний м\'яч',
             title: 'Вітаємо!', text: `Привіт, ${surveyData.lastName} ${surveyData.firstName} ${surveyData.patronymic}! Радий тебе бачити!`,
             confirmButtonText: 'Чудово!', customClass: swalCustomClasses
         });
