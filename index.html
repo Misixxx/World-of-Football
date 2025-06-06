@@ -47,7 +47,7 @@
     </div>
 
     <!-- Модальне вікно для карти -->
-    <div id="mapModal" class="modal">
+    <div id="mapModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close-button">×</span>
             <h2>Футбольна карта України</h2>
@@ -59,9 +59,9 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Модальне вікно для калькулятора -->
-    <div id="calcModal" class="modal">
+    <div id="calcModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close-button">×</span>
             <h2>Знаходження довжини гіпотенузи</h2>
@@ -79,12 +79,15 @@
             <div id="calcResult"></div>
         </div>
     </div>
-    
+
     <!-- Підключення скриптів в правильному порядку -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagemapster/1.5.4/jquery.imagemapster.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <!-- Наші власні файли скриптів -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/gpn.js"></script>
+</body>
+
+</html>
