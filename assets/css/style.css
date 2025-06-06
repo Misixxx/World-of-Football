@@ -1903,17 +1903,15 @@ h1 {
     height: auto;
 }
 
-/* ===============================
-   ТІЛЬКИ ЗЕЛЕНИЙ ФОН ДЛЯ КАРТИ
-   =============================== */
+/* ========================================================
+   БРОНЕБІЙНИЙ ФІКС: ГАРАНТОВАНО ЗЕЛЕНИЙ ФОН ДЛЯ КАРТИ
+   ======================================================== */
 
-   #mapModal .modal-content {
-       background-color: #4A6B5D !important;
-       /* !important переб'є все інше */
-       color: #f0f3f4 !important;
-   }
+#mapModal .modal-content {
+    background-color: #4A6B5D !important;
+    color: #f0f3f4 !important;
+}
 
 #mapModal .modal-content h2 {
-    color: #E9D298;
-    /* Золотистий заголовок, як просили раніше */
+    color: #E9D298 !important;
 }

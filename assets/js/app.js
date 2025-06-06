@@ -3,36 +3,43 @@
    Відповідає за Карту та Опитування
    ============================================== */
 
-   document.addEventListener('DOMContentLoaded', function() {
+  // Переходимо на jQuery-синтаксис для надійності
+$(document).ready(function() {
 
     // --- ЛОГІКА ДЛЯ КАРТИ ---
-    const mapModal = document.getElementById('mapModal');
-    const openMapBtn = document.getElementById('openMapBtn');
-    const closeMapButton = document.querySelector('#mapModal .close-button');
+    const mapModal = $('#mapModal');
+    const modalContent = $('#mapModal .modal-content'); // Знаходимо вміст вікна
+    const modalHeader = $('#mapModal .modal-content h2'); // Знаходимо заголовок
 
-    if (openMapBtn) {
-        openMapBtn.addEventListener('click', (e) => { e.preventDefault(); if (mapModal) mapModal.style.display = 'block'; });
-    }
-    if (closeMapButton) {
-        closeMapButton.addEventListener('click', () => { if (mapModal) mapModal.style.display = 'none'; });
-    }
-    window.addEventListener('click', (event) => { if (event.target === mapModal) mapModal.style.display = 'none'; });
-    window.addEventListener('keydown', (event) => { if (event.key === 'Escape' && mapModal && mapModal.style.display === 'block') mapModal.style.display = 'none'; });
+    // Відкриття вікна
+    $('#openMapBtn').on('click', function(e) {
+        e.preventDefault();
+        
+        // ==========================================
+        //         "ЯДЕРНИЙ ВАРІАНТ" ТУТ:
+        // Примусово застосовуємо стилі при відкритті
+        // ==========================================
+        modalContent.css('background-color', '#4A6B5D'); 
+        modalContent.css('color', '#f0f3f4');
+        modalHeader.css('color', '#E9D298');
+
+        mapModal.show();
+    });
+
+    // Закриття вікна по кнопці "х"
+    $('#mapModal .close-button').on('click', function() {
+        mapModal.hide();
+    });
     
-    // Ініціалізація карти (без затримок, бо скрипт вже гарантовано завантажено)
-    if (typeof jQuery !== 'undefined' && jQuery.fn.mapster) {
-        try {
-            $('img[usemap]').mapster({
-                fillColor: '4a6b5d',
-                fillOpacity: 0.6,
-                stroke: true,
-                strokeColor: 'f0f3f4',
-                strokeWidth: 2,
-                singleSelect: true,
-                clickNavigate: true,
-                showToolTip: true
-            });
-        } catch(e) { console.error("Помилка ініціалізації ImageMapster:", e); }
+    // Ініціалізація КЛІКАБЕЛЬНОЇ карти
+    try {
+        $('img[usemap]').mapster({
+            fillColor: '4a6b5d', fillOpacity: 0.6,
+            stroke: true, strokeColor: 'f0f3f4', strokeWidth: 2,
+            singleSelect: true, clickNavigate: true, showToolTip: true
+        });
+    } catch(e) {
+        console.error("Помилка ініціалізації карти ImageMapster:", e);
     }
     
     // --- ЛОГІКА ДЛЯ ОПИТУВАННЯ ---
