@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Світ Футболу - Головна</title>
-
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <body class="main-menu-page">
@@ -31,12 +29,10 @@
                     <div class="nav-icon">🏅</div><span>Футбольні змагання</span>
                     <div class="nav-arrow">→</div>
                 </a></div>
-
             <div class="nav-item"><a href="#" id="openUserFormBtn" title="Заповнити форму користувача">
                     <div class="nav-icon">👤</div><span>Форма користувача</span>
                     <div class="nav-arrow">→</div>
                 </a></div>
-
             <div class="nav-item"><a href="#" id="openMapBtn">
                     <div class="nav-icon">🗺️</div><span>Карта команд</span>
                     <div class="nav-arrow">→</div>
@@ -51,15 +47,48 @@
                 </a></div>
         </nav>
     </div>
+    
+    <div id="mapModal" class="modal" style="display: none;">
+        <div class="modal-content-custom">
+            <span class="close-button">×</span>
+            <h2 class="form-header">Карта футбольних команд</h2>
+            <img src="path/to/your/map-image.png" usemap="#teammap" id="football_map" style="max-width: 100%;">
+            <map name="teammap">
+                <area shape="rect" coords="34,44,270,350" href="#" title="Команда 1">
+                <area shape="circle" coords="333,444,44" href="#" title="Команда 2">
+            </map>
+            <p style="text-align: center; margin-top: 10px;">Наведіть курсор на ділянку карти, щоб побачити назву.</p>
+        </div>
+    </div>
 
-    <div id="mapModal" class="modal" style="display: none;"></div>
-    <div id="calcModal" class="modal" style="display: none;"></div>
+    <div id="calcModal" class="modal" style="display: none;">
+        <div class="modal-content-custom">
+            <span class="close-button">×</span>
+            <h2 class="form-header">Калькулятор гіпотенузи</h2>
+            <form id="hypotenuse-calculator">
+                <div class="form-group">
+                    <label for="sideA">Катет A:</label>
+                    <input type="number" id="sideA" name="sideA" placeholder="Введіть довжину катета A" required
+                        min="0.01" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="sideB">Катет B:</label>
+                    <input type="number" id="sideB" name="sideB" placeholder="Введіть довжину катета B" required
+                        min="0.01" step="0.01">
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="form-button submit-btn">Розрахувати</button>
+                </div>
+                <p id="result-hypotenuse"
+                    style="margin-top: 20px; font-size: 1.2em; text-align: center; color: var(--accent-green);"></p>
+            </form>
+        </div>
+    </div>
 
     <div id="userFormModal" class="modal" style="display: none;">
         <div class="modal-content-custom">
             <span class="close-button">×</span>
             <h2 class="form-header">Форма користувача</h2>
-
             <form id="detailedUserForm">
                 <h3>Поля з можливим написанням даних</h3>
                 <div class="form-group"><label for="login">Текстове поле (логін):</label><input type="text" id="login"
@@ -74,7 +103,6 @@
                         name="search" placeholder="Пошуковий запит"></div>
                 <div class="form-group"><label for="phone">Поле для телефону:</label><input type="tel" id="phone"
                         name="phone" placeholder="+380-XX-XXX-XX-XX" required></div>
-
                 <h3>Поля які не потребують вводу тексту</h3>
                 <div class="form-group"><label for="age">Числове поле (вік):</label><input type="number" id="age"
                         name="age" placeholder="Ваш вік" min="18"></div>
@@ -107,7 +135,6 @@
                         id="call-time" name="call-time"></div>
                 <div class="form-group"><label for="work-week">Робочий тиждень (номер):</label><input type="week"
                         id="work-week" name="work-week"></div>
-
                 <div class="button-container">
                     <button type="submit" class="form-button submit-btn">Відправити дані</button>
                     <button type="reset" class="form-button reset-btn">Очистити форму</button>
@@ -160,6 +187,20 @@
                     confirmButtonColor: 'var(--accent-green)'
                 });
                 this.reset();
+            });
+
+            $('#hypotenuse-calculator').on('submit', function (e) {
+                e.preventDefault();
+
+                const a = parseFloat($('#sideA').val());
+                const b = parseFloat($('#sideB').val());
+
+                if (!isNaN(a) && !isNaN(b) && a > 0 && b > 0) {
+                    const hypotenuse = Math.sqrt(a * a + b * b);
+                    $('#result-hypotenuse').text(`Гіпотенуза: ${hypotenuse.toFixed(2)}`);
+                } else {
+                    $('#result-hypotenuse').text('Введіть коректні додатні числа.');
+                }
             });
         });
     </script>
