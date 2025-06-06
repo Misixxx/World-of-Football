@@ -1,16 +1,5 @@
-/* =========================================================
-   Файл: assets/js/app.js
-   Відповідає за КАРТУ та ОПИТУВАННЯ
-   ========================================================= */
-
-// =====================================================================
-//      ФІКС ПРОБЛЕМИ "ВІДКРИТТЯ ВІКОН ПРИ ПОВЕРНЕННІ НА СТОРІНКУ"
-// =====================================================================
 window.addEventListener('pageshow', function(event) {
-    // Властивість 'persisted' дорівнює true, якщо сторінка відновлена з кешу
     if (event.persisted) {
-        // Примусово закриваємо всі модальні вікна
-        // Це скине стан сторінки до початкового
         const mapModal = document.getElementById('mapModal');
         const calcModal = document.getElementById('calcModal');
         if (mapModal) mapModal.style.display = 'none';
@@ -18,25 +7,19 @@ window.addEventListener('pageshow', function(event) {
     }
 });
 
-
-// Конструкція, яка гарантує, що код виконається після завантаження jQuery
 $(document).ready(function() {
 
-    // --- ЛОГІКА ДЛЯ КАРТИ ---
     const mapModal = $('#mapModal');
 
-    // Відкриття вікна
     $('#openMapBtn').on('click', function(e) {
         e.preventDefault();
         mapModal.show();
     });
 
-    // Закриття вікна по кнопці "х"
     $('#mapModal .close-button').on('click', function() {
         mapModal.hide();
     });
 
-    // Ініціалізація КЛІКАБЕЛЬНОЇ карти
     try {
         $('img[usemap]').mapster({
             fillColor: '4a6b5d', fillOpacity: 0.6,
@@ -47,7 +30,6 @@ $(document).ready(function() {
         console.error("Помилка ініціалізації карти ImageMapster:", e);
     }
     
-    // --- ЛОГІКА ДЛЯ ОПИТУВАННЯ ---
     $('#startSurveyBtn').on('click', function(e) {
         e.preventDefault();
         startModernSurvey();
@@ -87,7 +69,6 @@ $(document).ready(function() {
         });
     }
 
-    // Загальне закриття вікна карти
     $(window).on('click', function(event) {
         if ($(event.target).is(mapModal)) mapModal.hide();
     });

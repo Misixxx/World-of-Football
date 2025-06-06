@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Історія Футболу - Хронологічна таблиця та Тест</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Додамо трохи стилів для нашого тесту, щоб він виглядав охайно -->
     <style>
         .quiz-container {
             margin-top: 40px;
@@ -301,7 +300,6 @@
                 людство навколо спільної пристрасті до прекрасної гри.</p>
         </div>
 
-        <!-- ***** ПОЧАТОК БЛОКУ З ТЕСТОМ ***** -->
         <div class="quiz-container">
             <h2>Перевірте свої знання: Тест з історії футболу</h2>
             <form method="post" name="footballTest" class="quiz-form">
@@ -340,7 +338,6 @@
                     <br><input type="text" name="question5" id="q5_text" placeholder="Король футболу...">
                 </p>
 
-                <!-- Кнопка та поле для виводу результату, розміщені по центру -->
                 <div class="quiz-center-button">
                     <input name="check" onclick="perevirka(this.form)" type="button" value="Перевірити результати">
                     <br>
@@ -348,7 +345,6 @@
                 </div>
             </form>
         </div>
-        <!-- ***** КІНЕЦЬ БЛОКУ З ТЕСТОМ ***** -->
 
         <div class="button-container">
             <a href="index.html" class="styled-button">
@@ -358,45 +354,36 @@
         </div>
     </div>
 
-    <!-- ***** СКРИПТ ПЕРЕВІРКИ ТЕСТУ ***** -->
     <script>
         function perevirka(form) {
-            let bal = 0; // Змінна для підрахунку балів
+            let bal = 0;
 
-            // --- Перевірка відповіді 1 (Дата) ---
             if (document.getElementById("q1_date").value === "1863-10-26") {
                 bal += 1;
             }
 
-            // --- Перевірка відповіді 2 (Радіокнопка) ---
             if (document.getElementById("q2_2").checked) {
                 bal += 1;
             }
 
-            // --- Перевірка відповіді 3 (Чекбокси) ---
-            // Правильна відповідь, якщо відзначені 3 правильні і НЕ відзначена 1 неправильна
             const q3_1_checked = document.getElementById("q3_1").checked;
             const q3_2_checked = document.getElementById("q3_2").checked;
             const q3_3_checked = document.getElementById("q3_3").checked;
-            const q3_4_checked = document.getElementById("q3_4").checked; // Неправильний варіант
+            const q3_4_checked = document.getElementById("q3_4").checked;
 
             if (q3_1_checked && q3_2_checked && q3_3_checked && !q3_4_checked) {
                 bal += 1;
             }
 
-            // --- Перевірка відповіді 4 (Випадаючий список) ---
             if (document.getElementById("q4_select").value === "Уругвай") {
                 bal += 1;
             }
 
-            // --- Перевірка відповіді 5 (Текстове поле) ---
-            // .trim() видаляє зайві пробіли, .toLowerCase() робить текст маленькими літерами для коректного порівняння
             const answer5 = document.getElementById("q5_text").value.trim().toLowerCase();
             if (answer5 === "пеле") {
                 bal += 1;
             }
 
-            // --- Формування та вивід результату ---
             let resultMessage = "Ваш результат: " + bal + " з 5 правильних відповідей.\n";
 
             if (bal === 5) {

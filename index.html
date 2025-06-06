@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Світ Футболу - Головна</title>
 
-    <!-- Посилання на CSS та бібліотеки -->
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body class="main-menu-page">
@@ -19,75 +19,150 @@
             <p class="subtitle">Оберіть пункт:</p>
         </div>
         <nav class="navigation">
-            <div class="nav-item"><a href="legends.html" title="Для переходу натисніть">
+            <div class="nav-item"><a href="legends.html">
                     <div class="nav-icon">🏆</div><span>Легенди футболу</span>
                     <div class="nav-arrow">→</div>
                 </a></div>
-            <div class="nav-item"><a href="history.html" title="Для переходу натисніть">
+            <div class="nav-item"><a href="history.html">
                     <div class="nav-icon">📚</div><span>Історія футболу</span>
                     <div class="nav-arrow">→</div>
                 </a></div>
-            <div class="nav-item"><a href="competitions.html" title="Для переходу натисніть">
+            <div class="nav-item"><a href="competitions.html">
                     <div class="nav-icon">🏅</div><span>Футбольні змагання</span>
                     <div class="nav-arrow">→</div>
                 </a></div>
-            <div class="nav-item"><a href="#" id="openMapBtn" title="Відкрити карту команд">
+
+            <div class="nav-item"><a href="#" id="openUserFormBtn" title="Заповнити форму користувача">
+                    <div class="nav-icon">👤</div><span>Форма користувача</span>
+                    <div class="nav-arrow">→</div>
+                </a></div>
+
+            <div class="nav-item"><a href="#" id="openMapBtn">
                     <div class="nav-icon">🗺️</div><span>Карта команд</span>
                     <div class="nav-arrow">→</div>
                 </a></div>
-            <div class="nav-item"><a href="#" id="startSurveyBtn" title="Натисніть, щоб пройти опитування">
+            <div class="nav-item"><a href="#" id="startSurveyBtn">
                     <div class="nav-icon">📝</div><span>Пройти опитування</span>
                     <div class="nav-arrow">→</div>
                 </a></div>
-            <div class="nav-item"><a href="#" id="openCalcBtn" title="Обчислити гіпотенузу">
+            <div class="nav-item"><a href="#" id="openCalcBtn">
                     <div class="nav-icon">🧮</div><span>Калькулятор гіпотенузи</span>
                     <div class="nav-arrow">→</div>
                 </a></div>
         </nav>
     </div>
 
-    <!-- Модальне вікно для карти -->
-    <div id="mapModal" class="modal" style="display: none;">
-        <div class="modal-content">
+    <div id="mapModal" class="modal" style="display: none;"></div>
+    <div id="calcModal" class="modal" style="display: none;"></div>
+
+    <div id="userFormModal" class="modal" style="display: none;">
+        <div class="modal-content-custom">
             <span class="close-button">×</span>
-            <h2>Футбольна карта України</h2>
-            <div class="map-container">
-                <img src="assets/media/ukraine.png" alt="Карта футбольних команд України" usemap="#ukraineFootballMap">
-                <map name="ukraineFootballMap">
-                    <!-- ... ваші теги <area> залишаються тут ... -->
-                </map>
-            </div>
+            <h2 class="form-header">Форма користувача</h2>
+
+            <form id="detailedUserForm">
+                <h3>Поля з можливим написанням даних</h3>
+                <div class="form-group"><label for="login">Текстове поле (логін):</label><input type="text" id="login"
+                        name="login" placeholder="Макс. 15 символів" maxlength="15" required></div>
+                <div class="form-group"><label for="password">Поле-пароль:</label><input type="password" id="password"
+                        name="password" placeholder="Введіть пароль" required></div>
+                <div class="form-group"><label for="email">Поле e-mail:</label><input type="email" id="email"
+                        name="email" placeholder="name@example.com" required></div>
+                <div class="form-group"><label for="website">Поле URL (особистий сайт):</label><input type="url"
+                        id="website" name="website" placeholder="https://example.com"></div>
+                <div class="form-group"><label for="search">Поле пошуку:</label><input type="search" id="search"
+                        name="search" placeholder="Пошуковий запит"></div>
+                <div class="form-group"><label for="phone">Поле для телефону:</label><input type="tel" id="phone"
+                        name="phone" placeholder="+380-XX-XXX-XX-XX" required></div>
+
+                <h3>Поля які не потребують вводу тексту</h3>
+                <div class="form-group"><label for="age">Числове поле (вік):</label><input type="number" id="age"
+                        name="age" placeholder="Ваш вік" min="18"></div>
+                <div class="form-group choice-group">
+                    <label>Опції:</label>
+                    <label><input type="checkbox" name="options" value="data_agree" checked> Згода на обробку
+                        даних</label>
+                    <label><input type="checkbox" name="options" value="subscribe"> Підписка на розсилку</label>
+                </div>
+                <div class="form-group choice-group">
+                    <label>Ваш вибір:</label>
+                    <label><input type="radio" name="choice" value="1" required> Варіант 1</label>
+                    <label><input type="radio" name="choice" value="2" checked> Варіант 2</label>
+                </div>
+                <div class="form-group"><label for="color">Вибір улюбленого кольору:</label><input type="color"
+                        id="color" name="color" value="#2ecc71"></div>
+                <div class="form-group"><label for="avatar">Завантажити файл (аватар):</label><input type="file"
+                        id="avatar" name="avatar"></div>
+                <div class="form-group"><label for="readonly-field">Приклад поля тільки для читання:</label><input
+                        type="text" id="readonly-field" value="Це значення незмінне" readonly></div>
+                <div class="form-group"><label for="birthdate">Дата народження:</label><input type="date" id="birthdate"
+                        name="birthdate"></div>
+                <div class="form-group"><label for="meeting-time">Дата і час зустрічі:</label><input
+                        type="datetime-local" id="meeting-time" name="meeting-time"></div>
+                <div class="form-group"><label for="rating">Поле-діапазон (оцінка 1-10):</label><input type="range"
+                        id="rating" name="rating" min="1" max="10" value="7"></div>
+                <div class="form-group"><label for="sub-end">Місяць та рік закінчення підписки:</label><input
+                        type="month" id="sub-end" name="sub-end"></div>
+                <div class="form-group"><label for="call-time">Бажаний час для дзвінка:</label><input type="time"
+                        id="call-time" name="call-time"></div>
+                <div class="form-group"><label for="work-week">Робочий тиждень (номер):</label><input type="week"
+                        id="work-week" name="work-week"></div>
+
+                <div class="button-container">
+                    <button type="submit" class="form-button submit-btn">Відправити дані</button>
+                    <button type="reset" class="form-button reset-btn">Очистити форму</button>
+                </div>
+            </form>
         </div>
     </div>
 
-    <!-- Модальне вікно для калькулятора -->
-    <div id="calcModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close-button">×</span>
-            <h2>Знаходження довжини гіпотенузи</h2>
-            <div class="calc-form">
-                <div class="form-group">
-                    <label for="k1">Довжина першого катета (см):</label>
-                    <input type="number" id="k1" required min="0.01" step="0.01" placeholder="Введіть число...">
-                </div>
-                <div class="form-group">
-                    <label for="k2">Довжина другого катета (см):</label>
-                    <input type="number" id="k2" required min="0.01" step="0.01" placeholder="Введіть число...">
-                </div>
-                <button id="calculateBtn">Обчислити</button>
-            </div>
-            <div id="calcResult"></div>
-        </div>
-    </div>
-
-    <!-- Підключення скриптів в правильному порядку -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagemapster/1.5.4/jquery.imagemapster.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Наші власні файли скриптів -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/gpn.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            const modals = {
+                '#openMapBtn': '#mapModal',
+                '#openCalcBtn': '#calcModal',
+                '#openUserFormBtn': '#userFormModal'
+            };
+
+            $.each(modals, function (buttonId, modalId) {
+                $(buttonId).on('click', function (e) {
+                    e.preventDefault();
+                    $(modalId).fadeIn(200);
+                });
+            });
+
+            $('.close-button').on('click', function () {
+                $(this).closest('.modal').fadeOut(200);
+            });
+
+            $(window).on('click', function (event) {
+                if ($(event.target).is('.modal')) {
+                    $(event.target).fadeOut(200);
+                }
+            });
+
+            $('#detailedUserForm').on('submit', function (e) {
+                e.preventDefault();
+                $('#userFormModal').fadeOut(200);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Дякуємо!',
+                    text: 'Ваші дані було успішно надіслано.',
+                    background: 'var(--menu-bg)',
+                    color: 'var(--menu-text)',
+                    confirmButtonColor: 'var(--accent-green)'
+                });
+                this.reset();
+            });
+        });
+    </script>
 </body>
 
 </html>
