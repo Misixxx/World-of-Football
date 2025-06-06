@@ -47,48 +47,47 @@
                 </a></div>
         </nav>
     </div>
-    
-    <div id="mapModal" class="modal" style="display: none;">
+
+    <div id="mapModal" class="modal">
         <div class="modal-content-custom">
             <span class="close-button">×</span>
-            <h2 class="form-header">Карта футбольних команд</h2>
-            <img src="path/to/your/map-image.png" usemap="#teammap" id="football_map" style="max-width: 100%;">
+            <h2 class="form-header">Футбольна карта України</h2>
+            <img src="assets/media/ukraine.png" usemap="#teammap" id="football_map"
+                style="max-width: 100%; display: block; margin: 0 auto;">
             <map name="teammap">
                 <area shape="rect" coords="34,44,270,350" href="#" title="Команда 1">
                 <area shape="circle" coords="333,444,44" href="#" title="Команда 2">
             </map>
-            <p style="text-align: center; margin-top: 10px;">Наведіть курсор на ділянку карти, щоб побачити назву.</p>
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; opacity: 0.8;">Наведіть курсор на ділянку
+                карти, щоб побачити назву.</p>
         </div>
     </div>
 
-    <div id="calcModal" class="modal" style="display: none;">
+    <div id="calcModal" class="modal">
         <div class="modal-content-custom">
             <span class="close-button">×</span>
-            <h2 class="form-header">Калькулятор гіпотенузи</h2>
+            <h2 class="form-header">Знаходження довжини гіпотенузи</h2>
             <form id="hypotenuse-calculator">
                 <div class="form-group">
-                    <label for="sideA">Катет A:</label>
-                    <input type="number" id="sideA" name="sideA" placeholder="Введіть довжину катета A" required
-                        min="0.01" step="0.01">
+                    <label for="sideA">Довжина першого катета (см):</label>
+                    <input type="number" id="sideA" name="sideA" value="6" required min="0.01" step="0.01">
                 </div>
                 <div class="form-group">
-                    <label for="sideB">Катет B:</label>
-                    <input type="number" id="sideB" name="sideB" placeholder="Введіть довжину катета B" required
-                        min="0.01" step="0.01">
+                    <label for="sideB">Довжина другого катета (см):</label>
+                    <input type="number" id="sideB" name="sideB" value="4" required min="0.01" step="0.01">
                 </div>
                 <div class="button-container">
-                    <button type="submit" class="form-button submit-btn">Розрахувати</button>
+                    <button type="submit" class="form-button submit-btn">Обчислити</button>
                 </div>
-                <p id="result-hypotenuse"
-                    style="margin-top: 20px; font-size: 1.2em; text-align: center; color: var(--accent-green);"></p>
+                <p id="result-hypotenuse"></p>
             </form>
         </div>
     </div>
 
-    <div id="userFormModal" class="modal" style="display: none;">
-        <div class="modal-content-custom">
+    <div id="userFormModal" class="modal">
+        <div class="modal-content-custom" style="background: #333; color: #eee;">
             <span class="close-button">×</span>
-            <h2 class="form-header">Форма користувача</h2>
+            <h2 class="form-header" style="color: #2ecc71;">Форма користувача</h2>
             <form id="detailedUserForm">
                 <h3>Поля з можливим написанням даних</h3>
                 <div class="form-group"><label for="login">Текстове поле (логін):</label><input type="text" id="login"
@@ -106,17 +105,12 @@
                 <h3>Поля які не потребують вводу тексту</h3>
                 <div class="form-group"><label for="age">Числове поле (вік):</label><input type="number" id="age"
                         name="age" placeholder="Ваш вік" min="18"></div>
-                <div class="form-group choice-group">
-                    <label>Опції:</label>
-                    <label><input type="checkbox" name="options" value="data_agree" checked> Згода на обробку
-                        даних</label>
-                    <label><input type="checkbox" name="options" value="subscribe"> Підписка на розсилку</label>
-                </div>
-                <div class="form-group choice-group">
-                    <label>Ваш вибір:</label>
-                    <label><input type="radio" name="choice" value="1" required> Варіант 1</label>
-                    <label><input type="radio" name="choice" value="2" checked> Варіант 2</label>
-                </div>
+                <div class="form-group choice-group"><label>Опції:</label><label><input type="checkbox" name="options"
+                            value="data_agree" checked> Згода на обробку даних</label><label><input type="checkbox"
+                            name="options" value="subscribe"> Підписка на розсилку</label></div>
+                <div class="form-group choice-group"><label>Ваш вибір:</label><label><input type="radio" name="choice"
+                            value="1" required> Варіант 1</label><label><input type="radio" name="choice" value="2"
+                            checked> Варіант 2</label></div>
                 <div class="form-group"><label for="color">Вибір улюбленого кольору:</label><input type="color"
                         id="color" name="color" value="#2ecc71"></div>
                 <div class="form-group"><label for="avatar">Завантажити файл (аватар):</label><input type="file"
@@ -135,10 +129,8 @@
                         id="call-time" name="call-time"></div>
                 <div class="form-group"><label for="work-week">Робочий тиждень (номер):</label><input type="week"
                         id="work-week" name="work-week"></div>
-                <div class="button-container">
-                    <button type="submit" class="form-button submit-btn">Відправити дані</button>
-                    <button type="reset" class="form-button reset-btn">Очистити форму</button>
-                </div>
+                <div class="button-container"><button type="submit" class="form-button submit-btn">Відправити
+                        дані</button><button type="reset" class="form-button reset-btn">Очистити форму</button></div>
             </form>
         </div>
     </div>
@@ -161,17 +153,17 @@
             $.each(modals, function (buttonId, modalId) {
                 $(buttonId).on('click', function (e) {
                     e.preventDefault();
-                    $(modalId).fadeIn(200);
+                    $(modalId).css('display', 'flex').hide().fadeIn(300);
                 });
             });
 
             $('.close-button').on('click', function () {
-                $(this).closest('.modal').fadeOut(200);
+                $(this).closest('.modal').fadeOut(300);
             });
 
             $(window).on('click', function (event) {
                 if ($(event.target).is('.modal')) {
-                    $(event.target).fadeOut(200);
+                    $(event.target).fadeOut(300);
                 }
             });
 
@@ -191,16 +183,20 @@
 
             $('#hypotenuse-calculator').on('submit', function (e) {
                 e.preventDefault();
-
                 const a = parseFloat($('#sideA').val());
                 const b = parseFloat($('#sideB').val());
+                const resultElement = $('#result-hypotenuse');
 
                 if (!isNaN(a) && !isNaN(b) && a > 0 && b > 0) {
                     const hypotenuse = Math.sqrt(a * a + b * b);
-                    $('#result-hypotenuse').text(`Гіпотенуза: ${hypotenuse.toFixed(2)}`);
+                    resultElement.text(`Довжина гіпотенузи: ${hypotenuse.toFixed(2)} см.`).fadeIn();
                 } else {
-                    $('#result-hypotenuse').text('Введіть коректні додатні числа.');
+                    resultElement.text('Введіть коректні додатні числа.').fadeIn();
                 }
+            });
+
+            $('#sideA, #sideB').on('input', function () {
+                $('#result-hypotenuse').fadeOut();
             });
         });
     </script>
